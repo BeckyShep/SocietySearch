@@ -26,5 +26,7 @@ urlpatterns = [
     path('societysearch/', include('societysearch.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
+    path('accounts/signup/general/', societysearch.GeneralSignUpView(), name='generalsignup'),
+    path('accounts/signup/societyadmin/', societysearch.SocietyAdminSignUpView(), name='societyadminsignup'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ]
