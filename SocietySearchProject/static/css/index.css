@@ -19,7 +19,7 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 25px;
-  background-color: #003865;
+  background-color: #000;
   color: #fff;
 }
 
@@ -57,7 +57,23 @@ li {
   border-style: solid;
 }
 
-/* .content styling */
+/* main navbar styling */
+.searchbar {
+  padding: 50px 10px 0px 0px;
+  width: 50%;
+  margin: auto;
+}
+.searchbar  input[type=text]{
+  height: 36pt;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1.5pt solid;
+  border-radius: 30px;
+  border-color: #003865;
+  background-color: #e8f5ff;
+}
+
+/* main .content styling */
 .content {
   padding: 2em;
 }
@@ -74,4 +90,22 @@ li {
 
 .about-desc p{
   padding: 0.7em;
+}
+
+/* footer styling*/
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: palegoldenrod;
+
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  margin: auto;
+  width: 50%;
+  font-style: italic;
 }
