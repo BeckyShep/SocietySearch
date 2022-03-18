@@ -19,7 +19,7 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 25px;
-  background-color: #000;
+  background-color: #003865;
   color: #fff;
 }
 
@@ -27,10 +27,13 @@ li {
   color: #fff;
 }
 
-/* mainText */
-.title {
-  font-size: 36px;
+/* header styling */
+h1 {
+  font-size: 32px;
   color: #FFF;
+}
+.title a:hover a:active a:visited{
+  color: #fff;
 }
 
 .links {

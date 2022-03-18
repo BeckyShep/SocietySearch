@@ -27,9 +27,13 @@ li {
   color: #fff;
 }
 
-/* mainText */
-.title {
+/* header styling */
+h1 {
   font-size: 32px;
+  color: #FFF;
+}
+.title a:hover a:active a:visited{
+  color: #fff;
 }
 
 .links {
