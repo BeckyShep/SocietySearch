@@ -1,0 +1,18 @@
+{% extends 'societysearch/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Registration
+{% endblock %}
+
+{% block body_block %}
+<h1> General User registration </h1>
+<form id="GeneralSignUpForm" method="post" action="accounts/signup/general/" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p}}
+    {{ profile_form.as_p}}
+    <input type="submit" name="submit" value="Register" />
+</form>
+{% endblock %}
+    
+

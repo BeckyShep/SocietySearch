@@ -1,0 +1,18 @@
+{% extends 'societysearch/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Registration
+{% endblock %}
+
+{% block body_block %}
+<h1> Please choose an account type: </h1>
+
+<form action="accounts/signup/general/">
+    <input type="submit" value="General User Sign UP" />
+</form
+
+<form action="accounts/signup/societyadmin/">
+    <input type="submit" value="Society Admin Sign UP" />
+</form
+{% endblock %}
