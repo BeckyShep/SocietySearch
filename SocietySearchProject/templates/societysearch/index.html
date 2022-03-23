@@ -12,7 +12,11 @@
 
     {% block body_block %}
     <div class="searchbar">
-        <input type="text" placeholder="Search...">
+        <form class="d-flex" method=POST action="{%url 'search' %}">
+                        {% csrf_token %}
+                        <input type="search" placeholder="Search" aria-label="Search" name="searched">
+                        <button type="submit">Search</button>
+        </form>
     </div>
 
     <div class="content">

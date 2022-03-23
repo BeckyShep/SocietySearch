@@ -26,7 +26,12 @@
             <!--Other links-->
             <ul class="nav-links">
                 <div class="links">
-                    <li><a href="/">Search</a></li>
+                    <form class="d-flex" method=POST action="{%url 'search' %}">
+                        {% csrf_token %}
+                        <input type="search" placeholder="Search" aria-label="Search" name="searched">
+                        <button type="submit">Search</button>
+                    </form>
+                    <li><a href="{% url 'add_society' %}">Add Society</a></li>
                     <li><a href="{% url 'societysearch:about' %}">About</a></li>
                     <li id="signin"><a href="/">Sign In</a></li>
                 </div>

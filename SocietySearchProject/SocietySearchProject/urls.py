@@ -26,8 +26,13 @@ urlpatterns = [
     # path('about/', views.about, name='about'),
     path('societysearch/', include('societysearch.urls')),
     path('admin/', admin.site.urls),
+    path('search/', views.search, name='search'),
+    path('add_society', views.add_society, name='add_society'),
+    path('search/society/<slug:society_name_slug>/', views.show_society, name='show_society'),
+    path('search/society/<slug:society_name_slug>/add_review', views.add_review, name='add_review'),
+    # path('like/<int:id>',views.LikeView,name='like_review'),
 #     path('accounts/', include('registration.backends.simple.urls')),
 #     path('accounts/signup/general/', societysearch.GeneralSignUpView(), name='generalsignup'),
 #     path('accounts/signup/societyadmin/', societysearch.SocietyAdminSignUpView(), name='societyadminsignup'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

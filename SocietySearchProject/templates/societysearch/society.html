@@ -1,0 +1,33 @@
+{% extends 'societysearch/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    About - SocietySearch
+{% endblock  %}
+
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+{% block body_block %}
+    {% if society %}
+        <div>
+            <h1>{{ society.name }}</h1>
+            <li><a href="{{ society.discord }}">Discord</a></li>
+            <li><a href="{{ society.facebook }}">Facebook</a></li>
+            <li><a href="{{ society.twitter }}">Twitter</a></li>
+            <li>Availability: {{ society.availability }}</li>
+            <li>The next event is: {{ society.nextEvent }}</li>
+            <li>Description: {{ society.description }}</li>
+        </div>
+        <div>
+            <h1>Reviews</h1>
+            <br><a href="add_review">Add Review</a><br/>
+            {% for review in reviews %}
+                <li>Review: {{ review.review }}</li>
+                <li>Likes: {{ review.likes }}</li>
+                <li>Date {{ review.date }}</li>
+                <br></br>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
