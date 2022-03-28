@@ -8,11 +8,12 @@
 {% block body_block %}
 <h1> Please choose an account type: </h1>
 
-<form action="accounts/signup/general/">
-    <input type="submit" value="General User Sign UP" />
-</form
+<form action="{% url 'GeneralSignUp' %}" method="post">
+    <input type="submit" value="General User Sign Up" />
+</form>
 
-<form action="accounts/signup/societyadmin/">
-    <input type="submit" value="Society Admin Sign UP" />
-</form
+<form action="{% url 'SocietyAdminSignUp' %}" method="post">
+    <input type="submit" value="Society Admin Sign Up" />
+</form>
+    
 {% endblock %}

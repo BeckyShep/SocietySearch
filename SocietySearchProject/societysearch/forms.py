@@ -6,23 +6,23 @@ class GeneralSignUpForm(forms.ModelForm):
      password = forms.CharField(widget=forms.PasswordInput())
     
      class Meta:
-          model = GeneralUserProfile
-          fields = ('username', 'email', 'password', 'university')
+          model = User
+          fields = ('username', 'email', 'password')
 
 
 class SocietyAdminSignUpForm(forms.ModelForm):
      password = forms.CharField(widget=forms.PasswordInput())
     
      class Meta:
-          model = SocietyAdminUserProfile
-          fields = ('username', 'email', 'password', 'university', 'society')
+          model = User
+          fields = ('username', 'email', 'password')
 
 class GeneralProfileForm(forms.ModelForm):
      class Meta:
          model = GeneralUserProfile
-         fields = ('picture',)
+         fields = ('university', 'picture',)
 
 class SocietyAdminProfileForm(forms.ModelForm):
      class Meta:
          model = SocietyAdminUserProfile
-         fields = ('picture',)
+         fields = ('society', 'university', 'facebook', 'discord', 'twitter', 'instagram', 'picture',)
