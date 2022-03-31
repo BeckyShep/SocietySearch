@@ -1,15 +1,16 @@
 {% extends 'societysearch/base.html' %}
 {% load static %}
 
-
 {% block title_block %}
     Homepage
 {% endblock %}
 
+<!-- link to css file for this page -->
 {% block css_block %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
+    <!-- main content after header, before footer -->
     {% block body_block %}
     <div class="searchbar">
         <form class="d-flex" method=POST action="{%url 'search' %}">
@@ -30,44 +31,3 @@
         </div>
     </div>
     {% endblock %}
-
-<!-- 
-<html>
-    <head>
-        <title>Index - SocietySearch</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    </head>
-
-    <body>
-        <div class="header">
-            <!-- Title 
-            <div id="title">
-                <h1>Society Search</h1>
-            </div>
-
-            <!--Other links
-            <ul class="nav-links">
-                <div class="links">
-                    <li><a href="/">Search</a></li>
-                    <li><a href="{% url 'societysearch:about' %}">About</a></li>
-                    <li id="signin"><a href="/">Sign In</a></li>
-                </div>
-            </ul>
-        </div>
-
-
-        <div class="content">
-            <h1><u>Index!! Homepage!!</u></h1>
-
-            <div class="about-desc">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra risus eu metus auctor pharetra. Etiam volutpat ornare nisl, vitae laoreet nisl luctus ac. Integer sed hendrerit sapien. In consectetur rhoncus massa. Fusce nec nisl dictum, blandit massa ut, aliquam purus. Maecenas eget libero fringilla, porttitor est vitae, dictum urna. Sed non mauris nisi. Quisque aliquam fermentum posuere. Morbi eu lorem libero. Donec velit felis, semper sit amet urna a, pulvinar congue tortor. Nullam vulputate sit amet purus scelerisque accumsan. Suspendisse bibendum ultricies ornare. Maecenas vitae augue et justo interdum ultricies. Nam cursus cursus ante. Ut sed tortor vitae leo placerat tincidunt dictum et lorem.</p>
-                <p>Quisque consequat, leo ut ultricies pretium, elit magna lacinia justo, eget volutpat purus dui ac erat. Donec porta odio lacus, ac blandit lectus pharetra et. Duis sodales, ante nec mattis ultricies, nibh magna finibus magna, eu accumsan ipsum ipsum sit amet arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nisl neque, tempus vel rutrum quis, sagittis non dui. Donec pulvinar ex sed mauris gravida, sit amet fermentum urna tincidunt. Ut sed diam suscipit, congue felis at, varius enim.</p>
-                <p>Nam placerat euismod lacus sed imperdiet. Ut ut massa ante. Sed lacinia augue diam, at elementum dolor fringilla nec. Fusce vel posuere mi. Pellentesque ante enim, posuere at ipsum at, fermentum eleifend sapien. Morbi aliquet massa mattis, fermentum risus nec, faucibus erat. In faucibus in nisi vel scelerisque.</p>
-
-            </div>
-        </div>
-
-    </body>
-</html>
---> 

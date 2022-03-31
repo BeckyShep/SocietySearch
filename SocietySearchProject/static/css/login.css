@@ -113,3 +113,74 @@ footer p{
   width: 50%;
   font-style: italic;
 }
+
+/** Styling for main content starts here **/
+#bodytitle {
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.mainform {
+  padding: 20px 50px;
+  margin: auto;
+  align-items: center;
+}
+
+.loginform {
+  width: 60%;
+  margin: auto;
+  align-items: center;  
+  padding: 20px;
+  border: 2px solid #004985;
+  border-radius: 10px;
+
+  box-shadow: 1px 2px 10px rgb(117, 117, 117);
+}
+
+.loginform p {
+  padding: 5px;
+}
+
+.loginform li {
+  padding: 10px 0px;
+  color: red;
+}
+
+.inputs {
+  padding: 15px 0px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+#button {
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #004985;
+  color: #fff;
+  position: static;
+  margin-top: 30px;
+
+  font-size: 11pt;
+}
+
+#button:hover {
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #004985
+}
+
+#button input:hover {
+  color: #004985;
+}
+
+#notreg {
+  margin: auto;
+  width: 60%;
+  padding: 30px 20px;
+  text-align: center;
+}
+

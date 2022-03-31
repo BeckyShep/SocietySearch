@@ -1,0 +1,22 @@
+{% extends 'societysearch/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Registration Closed
+{% endblock %}
+
+<!-- link to css file for this page -->
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<div class="content">
+    <h1>Registration Closed</h1>
+    <p>Unfortunately, registration is currently closed. Please try again later!</p>
+
+    <a href="{% url 'societysearch:index' %}">>> Click here to return back to the homepage</a>
+</div>
+
+
+{% endblock %}

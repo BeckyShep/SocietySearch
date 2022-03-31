@@ -23,16 +23,16 @@ li {
   color: #fff;
 }
 
-.nav-links a{
+.nav-links a {
   color: #fff;
 }
 
 /* header styling */
 .title h1 {
   font-size: 32px;
-  color: #FFF;
+  color: #fff;
 }
-.title a:hover a:active a:visited{
+.title a:hover a:active a:visited {
   color: #fff;
 }
 
@@ -67,7 +67,7 @@ li {
   width: 50%;
   margin: auto;
 }
-.searchbar  input[type=text]{
+.searchbar input[type="text"] {
   height: 36pt;
   width: 100%;
   padding: 10px 20px;
@@ -92,7 +92,7 @@ li {
   /*size: auto 100px;*/
 }
 
-.about-desc p{
+.about-desc p {
   padding: 0.7em;
 }
 
@@ -108,8 +108,57 @@ footer {
   width: 100%;
 }
 
-footer p{
+footer p {
   margin: auto;
   width: 50%;
   font-style: italic;
+}
+
+/** Styling for main content starts here **/
+#bodytitle {
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+}
+
+.mainform {
+  padding: 20px 50px;
+  width: 60%;
+  margin: auto;
+  align-items: center;
+  padding: 2em;
+  border: 2px solid #004985;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px rgb(117, 117, 117);
+  text-align: center;
+}
+
+.mainform input {
+  padding: 10px;
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #004985;
+  color: #fff;
+  margin: 10px;
+}
+
+.mainform input:hover {
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #004985;
+  cursor: pointer;
+}
+
+.inputs {
+  padding: 15px 0px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
 }
