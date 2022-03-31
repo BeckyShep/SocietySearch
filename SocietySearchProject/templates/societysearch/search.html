@@ -1,0 +1,31 @@
+{% extends 'societysearch/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    About - SocietySearch
+{% endblock  %}
+
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+    <center>
+        {% if searched %}
+            <h1>You Searched For {{ searched }}</h1>
+            <br/>
+            {% for soc in societies %}
+                <li>
+                    <a href="society/{{ soc.slug }}/">{{ soc.name }}</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <h1>You forgot to enter a search...</h1>
+        {% endif %}
+
+
+    </center>
+
+
+{% endblock %}

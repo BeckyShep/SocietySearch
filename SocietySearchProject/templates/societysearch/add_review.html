@@ -1,0 +1,31 @@
+{% extends 'societysearch/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    About - SocietySearch
+{% endblock  %}
+
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <h1>Add Review</h1>
+          <div>
+               <form id="add_review_form" method="post" action="">
+                  {% csrf_token %}
+                  {% csrf_token %}
+                  {% for hidden in form.hidden_fields %}
+                        {{ hidden }}<br/>
+                  {% endfor %}
+                  {% for field in form.visible_fields %}
+                      {{ field.errors }}
+                      {{ field.help_text }}
+                      {{ field }}<br/>
+                  {% endfor %}
+                  <input type="submit" name="submit" value="Create Review" />
+              </form>
+          </div>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'societysearch/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    About - SocietySearch
+{% endblock  %}
+
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block body_block %}
+    <h1>Add Society</h1>
+          <div class="content">
+              <form id="society_form" method="POST" action="/add_society">
+                  {% csrf_token %}
+                  {% for hidden in form.hidden_fields %}
+                        {{ hidden }}<br/>
+                  {% endfor %}
+                  {% for field in form.visible_fields %}
+                      {{ field.errors }}
+                      {{ field.help_text }}
+                      {{ field }}<br/>
+                  {% endfor %}
+                  <input type="submit" name="submit" value="Create Society" />
+              </form>
+          </div>
+
+
+{% endblock %}

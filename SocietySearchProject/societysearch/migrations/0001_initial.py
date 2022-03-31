@@ -18,6 +18,27 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='SocietyPage',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=32)),
+                ('facebook', models.URLField(blank=True)),
+                ('discord', models.URLField(blank=True)),
+                ('twitter', models.URLField(blank=True)),
+                ('availability', models.CharField(max_length=100)),
+                ('nextEvent', models.CharField(max_length=200)),
+                ('description', models.CharField(max_length=500)),
+                ('slug', models.SlugField(unique=True)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Reviews',
+            fields=[
+                ('id', models.BigAutoField(primary_key=True, serialize=False)),
+                ('date', models.DateField()),
+                ('review', models.CharField(max_length=300)),
+                ('likes', models.IntegerField()),
+                ('society', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='societysearch.SocietyPage')),
             name='User',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
