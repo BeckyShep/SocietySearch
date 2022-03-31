@@ -1,0 +1,40 @@
+{% extends 'societysearch/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    About - SocietySearch
+{% endblock %}
+
+<!-- link to css file for this page -->
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+<!-- main content after header, before footer -->
+{% block body_block %}
+
+    <div class="content">
+        <h1><u>About</u></h1>
+
+        <div class="about-desc">
+            <p id="welcome">Welcome to Society Search! Your one stop shop for university societies in Glasgow.</p>
+            <p>
+                We know how difficult it can be to find the right society for you, especially with their being so many social media forms. 
+                So, we have put them all in one place for you! This will allow you to look up societies not just from your own university, 
+                but from other institutes in your area.
+            </p>
+            <p>
+                Use the search bar to input the kind of society you are looking for and browsed the options from those in your area 
+                until you find the right society for you. Each society have their own page with up-to-date contact details and information
+                about upcoming events.
+            </p>
+            <p>
+                Still unsure? Take a look at reviews left by other students to get a feel for the atmosphere before you go. 
+                Starting a new society can be nerve-wracking so Society Search is here to make the process as easy as possible for you.
+            </p>
+            <p>Want to add your society to our ever-growing database? <a href="{% url 'registration_register' %}">Sign up</a> as a society admin and add your society today!</p>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
@@ -20,13 +21,15 @@ from societysearch import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = 'societysearch'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('societysearch/', include('societysearch.urls')),
+    path('about/', views.about, name='about'),
+    path('societysearch/', include(('societysearch.urls', 'societysearch'), namespace='societysearch')),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('accounts/signup/general/', societysearch.GeneralSignUpView(), name='generalsignup'),
-    path('accounts/signup/societyadmin/', societysearch.SocietyAdminSignUpView(), name='societyadminsignup'),
+    path('accounts/register/generalsignup/', views.GeneralSignUpView, name = 'GeneralSignUp'),
+    path('accounts/register/societyadminsignup/', views.SocietyAdminSignUpView, name = 'SocietyAdminSignUp'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-]
+

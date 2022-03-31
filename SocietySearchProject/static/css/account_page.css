@@ -1,0 +1,38 @@
+.main-div {
+    margin: auto;
+    width: 70%;
+}
+
+.details-div {
+    text-align: center;
+}
+
+.details-break {
+    width: 50%;
+}
+
+.remove-games {
+    padding-right: 50px;
+    text-align: right;
+}
+
+.add-games {
+    padding-left: 50px;
+    text-align: left;
+}
+
+.game-header {
+    font-weight:400;
+}
+
+.remove {
+    width: 37%;
+}
+
+.add {
+    width: 35%;
+}
+
+.tag-name {
+    padding-right: 10px;
+}

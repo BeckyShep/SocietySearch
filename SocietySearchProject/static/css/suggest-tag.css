@@ -1,0 +1,17 @@
+.main-div {
+    margin:auto;
+    width:45%;
+}
+
+.tag-queue-div {
+    padding-left:50px;
+    text-align: left;
+}
+
+.steam-link {
+    padding-left: 20px;
+}
+
+.tag-preview {
+    background-color: #FFFF00
+}
