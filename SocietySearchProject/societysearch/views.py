@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.urls import reverse
-from societysearch.models import SocietyPage, Reviews
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 import datetime
 
 
@@ -10,8 +9,6 @@ from societysearch.forms import SocietyForm, ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
-
-
 from societysearch.forms import GeneralSignUpForm, SocietyAdminSignUpForm, GeneralProfileForm, SocietyAdminProfileForm
 from societysearch.models import User, GeneralUserProfile, SocietyAdminUserProfile
 
@@ -25,6 +22,9 @@ def index(request):
 # About page
 def about(request):
     return render(request, 'societysearch/about.html')
+
+def account_page(request):
+    return render(request, 'societysearch/account_page.html')
 
 
 def search(request):
@@ -95,24 +95,12 @@ def add_review(request, society_name_slug):
     return render(request,'societysearch/add_review.html',context=context_dict)
 
 
-# def LikeView(request,id):
-#     review = get_object_or_404(Reviews, id=request.POST.get('review_id'))
-#     review.likes += 1
-#     return redirect(reverse('show_society', kwargs={'society_name_slug': review.society.slug}))
+def LikeView(request,id):
+     review = get_object_or_404(Reviews, id=request.POST.get('review_id'))
+     review.likes += 1
+     return redirect(reverse('show_society', kwargs={'society_name_slug': review.society.slug}))
 
-# def GeneralSignUpView(request):
-#     registered = False
-
-#     if request.emthod == "Post":
-#         user_form = GeneralSignUpForm(request.Post)
-#         profile_form = GeneralProfileForm(request.Post)
-
-#         if user_form.is_valid() and profile_form.is_valid():
-#             user = user_form.save
-
-#             user.is_general = True
-#             user.set_password(user.password)
-#             user.save()
+            
 def GeneralSignUpView(request):
     registered = False
 
@@ -181,9 +169,3 @@ def SocietyAdminSignUpView(request):
      return render(request, 'registration/societyadminsignup.html',
                    context = {'user_form':user_form, 'profile_form': profile_form, 'registerd': registered})
 
-# else:
-#     user_form = SocietyAdminSignUpForm()
-#     profile_form = SocietyAdminProfileForm()
-
-# return render(request, 'societysearch/signup/societyadmin',
-#               context = {'user_form' = user_form, 'profile_form': profile_form, 'registerd': registered})

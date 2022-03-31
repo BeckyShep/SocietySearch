@@ -22,10 +22,10 @@ class GeneralProfileForm(forms.ModelForm):
          model = GeneralUserProfile
          fields = ('university', 'picture',)
 
-# class SocietyAdminProfileForm(forms.ModelForm):
-#         class Meta:
-#         model = SocietyAdminProfile
-#         fields = ('picture',)
+class SocietyAdminProfileForm(forms.ModelForm):
+     class Meta:
+          model = SocietyAdminUserProfile
+          fields = ('picture',)
 
 
 class SocietyForm(forms.ModelForm):
@@ -59,9 +59,6 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Reviews
         exclude = ('society','date','likes')
-
-
-
 
 
 class SocietyAdminProfileForm(forms.ModelForm):
