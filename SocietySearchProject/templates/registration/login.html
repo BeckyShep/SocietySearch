@@ -5,22 +5,36 @@
     Login
 {% endblock %}
 
+<!-- link to css file for this page -->
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+
 {% block body_block %}
-<h1> Login </h1>
 
-<form method="post" action=".">
-    {% csrf_token %}
 
-    {{ form.as_p }}
+<div class="mainform">
+    <h1 id="bodytitle"> Login </h1>
+    <form class="loginform" method="post" action=".">
+        {% csrf_token %}
+        
+        <div class="inputs">
+            {{ form.as_p }}
+            <input id="button" type="submit" value="Log In" />
+        </div>
+        
+    
 
-    <input type="submit" value="Log In" />
-    <input type="hidden" name="next" value="{{ next }}" />
-</form>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    
+    <p id="notreg">
+        Not registered?
+        <a href="{% url 'registration_register' %}">Register here!</a>
+    </p>
+</div>
 
-<p>
-Not registered?
-    <a href="{% url 'registration_register' %}">Register here!</a>
-</p>
 
     
 {% endblock %}

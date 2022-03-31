@@ -28,7 +28,7 @@ li {
 }
 
 /* header styling */
-h1 {
+.title h1 {
   font-size: 32px;
   color: #FFF;
 }
