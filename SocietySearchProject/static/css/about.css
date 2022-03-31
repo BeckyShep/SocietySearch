@@ -77,6 +77,24 @@ li {
   background-color: #e8f5ff;
 }
 
+/* footer styling*/
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: palegoldenrod;
+
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  margin: auto;
+  width: 50%;
+  font-style: italic;
+}
+
 /* main .content styling */
 .content {
   padding: 2em;
@@ -96,20 +114,12 @@ li {
   padding: 0.7em;
 }
 
-/* footer styling*/
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: palegoldenrod;
-
-  height: 60px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+#welcome {
+  font-size: 16pt;
+  font-style: italic;
+  font-weight: bold;
 }
 
-footer p{
-  margin: auto;
-  width: 50%;
-  font-style: italic;
+.about-desc a {
+  text-decoration: underline;
 }

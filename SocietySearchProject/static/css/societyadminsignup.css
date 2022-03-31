@@ -103,7 +103,7 @@ footer {
   background-color: palegoldenrod;
 
   height: 60px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -128,9 +128,8 @@ footer p {
 }
 
 .mainform {
-
   width: 70%;
-  margin: auto;
+  margin: 2em auto;
   align-items: center;
   padding: 2em;
   border: 2px solid #004985;
@@ -164,10 +163,6 @@ footer p {
   padding: 10px 0px;
 }
 
-.mainform input[type=text],input[type=email], input[type=url], input[type=password] {
-  height: 30px;
-}
-
 .mainform input[type=submit] {
   padding: 0px 0px;
   width: 100%;
@@ -184,5 +179,24 @@ footer p {
   background-color: #fff;
   color: #004985;
   cursor: pointer;
+}
+
+.mainform input[type=text] {
+  height: 30px;
+  cursor: text;
+}
+
+.mainform input[type=email] {
+  height: 30px;
+  cursor: text;
+}
+.mainform input[type=url] {
+  height: 30px;
+  cursor: text;
+}
+
+.mainform input[type=password] {
+  height: 30px;
+  cursor: text;
 }
 
