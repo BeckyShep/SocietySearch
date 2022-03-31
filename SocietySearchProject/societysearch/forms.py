@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from societysearch.models import GeneralUserProfile, SocietyAdminUserProfile, User
+from societysearch.models import GeneralUserProfile, SocietyAdminUserProfile, User, SocietyPage, Reviews
 
 class GeneralSignUpForm(forms.ModelForm):
      password = forms.CharField(widget=forms.PasswordInput())

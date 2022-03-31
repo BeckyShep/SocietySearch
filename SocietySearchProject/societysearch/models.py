@@ -47,7 +47,7 @@ class GeneralUserProfile(models.Model):
          return self.user.username
 
 class SocietyAdminUserProfile(models.Model):
-     user = models.OneToOneField(User, on_delete=models.CASCADE)
+     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key = True)
      
      is_societyAdmin = models.BooleanField(default=True)
      is_general = models.BooleanField(default=False)
