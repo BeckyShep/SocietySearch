@@ -5,15 +5,25 @@
     Registration
 {% endblock %}
 
+<!-- link to css file for this page -->
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
 {% block body_block %}
-<h1> Please choose an account type: </h1>
-
-<form action="{% url 'GeneralSignUp' %}" method="post">
-    <input type="submit" value="General User Sign Up" />
-</form>
-
-<form action="{% url 'SocietyAdminSignUp' %}" method="post">
-    <input type="submit" value="Society Admin Sign Up" />
-</form>
+<div class="content">
+    <div class="mainform">
+        <h1> Please choose an account type: </h1>
     
+        <form action="{% url 'GeneralSignUp' %}" method="post">
+            <input type="submit" value="General User Sign Up" />
+        </form>
+        
+        <form action="{% url 'SocietyAdminSignUp' %}" method="post">
+            <input type="submit" value="Society Admin Sign Up" />
+        </form>
+    </div>
+</div>
+
+
 {% endblock %}

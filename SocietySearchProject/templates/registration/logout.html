@@ -5,9 +5,20 @@
 Logged Out
 {% endblock %}
 
+<!-- link to css file for this page -->
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
+
 {% block body_block %}
-<h1>Logged Out</h1>
-<p>
-You have been successfully logged out. Thanks for spending time on Rango!
-</p>
+<div class="content">
+    <h1>Logged Out</h1>
+
+    <p>
+    You have been successfully logged out. Thanks for spending time on SocietySearch!
+    </p>
+
+    <a href="{% url 'societysearch:index' %}">>> Click here to return back to the homepage</a>
+</div>
+
 {% endblock %}

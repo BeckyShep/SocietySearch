@@ -1,0 +1,188 @@
+/* UTILITIES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: #003865;
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* header styling */
+.title h1 {
+  font-size: 32px;
+  color: #fff;
+}
+.title a:hover a:active a:visited {
+  color: #fff;
+}
+
+.links {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.links li:hover {
+  background-color: #4c9e9e;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.links li {
+  padding: 5px 14px;
+  border: #fff;
+  border-radius: 5px;
+  border-style: none;
+}
+
+#signin {
+  border: #fff;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+/* main navbar styling */
+.searchbar {
+  padding: 50px 10px 0px 0px;
+  width: 50%;
+  margin: auto;
+}
+.searchbar input[type="text"] {
+  height: 36pt;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1.5pt solid;
+  border-radius: 30px;
+  border-color: #003865;
+  background-color: #e8f5ff;
+}
+
+/* main .content styling */
+.content {
+  padding: 2em;
+}
+
+.content h1 {
+  font-size: 48px;
+  padding: 10px 0px;
+}
+
+.about-desc {
+  background-color: lightgray;
+  /*size: auto 100px;*/
+}
+
+.about-desc p {
+  padding: 0.7em;
+}
+
+/* footer styling*/
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: palegoldenrod;
+
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: auto;
+  width: 50%;
+  font-style: italic;
+}
+
+/** Styling for main content starts here **/
+#bodytitle {
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+}
+
+.mainform {
+
+  width: 70%;
+  margin: auto;
+  align-items: center;
+  padding: 2em;
+  border: 2px solid #004985;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px rgb(117, 117, 117);
+  text-align: justify;
+}
+
+.mainform h1 {
+  padding: 20px 0px;
+}
+
+.mainform ul {
+  font-style: italic;
+  font-size: 10pt;
+  color: red;
+}
+
+#GeneralSignUpForm p {
+  font-weight: bold;
+}
+
+#GeneralSignUpForm span {
+  font-weight: normal;
+  font-size: 11pt;
+  font-style: italic;
+  padding-left: 30px;
+}
+
+.mainform p {
+  padding: 10px 0px;
+}
+
+.mainform input[type=text],input[type=email], input[type=url], input[type=password] {
+  height: 30px;
+}
+
+.mainform input[type=submit] {
+  padding: 0px 0px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #004985;
+  color: #fff;
+  margin: 20px 0px;
+  font-size: 14pt;
+}
+
+.mainform input:hover {
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #004985;
+  cursor: pointer;
+}
+

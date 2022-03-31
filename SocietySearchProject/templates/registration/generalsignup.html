@@ -5,20 +5,30 @@
 	Registration
 {% endblock %}
 
+<!-- link to css file for this page -->
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/generalsignup.css' %}">
+{% endblock %}
+
 {% block body_block %}
-<h1> General User Registration </h1>
+<div class="content">
+    <div class="mainform">
+        <h1> General User Registration </h1>
 
-{% if registered %}
-<strong>Thank you for registering!</strong>
-<a href="{% url 'societysearch:index' %}">Return to homepage.</a><br />
-{% else %}
-<form id="GeneralSignUpForm" method="post" action="{% url 'GeneralSignUp' %}" enctype="multipart/form-data">
-    {% csrf_token %}
+        {% if registered %}
+        <strong>Thank you for registering!</strong>
+        <a href="{% url 'societysearch:index' %}">Return to homepage.</a><br />
+        {% else %}
+        <form id="GeneralSignUpForm" method="post" action="{% url 'GeneralSignUp' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            {{ user_form.as_p}}
+            {{ profile_form.as_p}}
+        
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    </div>
+</div>
 
-    {{ user_form.as_p}}
-    {{ profile_form.as_p}}
-
-    <input type="submit" name="submit" value="Register" />
-</form>
-{% endif %}
 {% endblock %}
