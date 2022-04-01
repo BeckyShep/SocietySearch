@@ -23,6 +23,7 @@ def index(request):
 def about(request):
     return render(request, 'societysearch/about.html')
 
+@login_required
 def account_page(request):
     return render(request, 'societysearch/account_page.html')
 
@@ -35,7 +36,7 @@ def search(request):
     else:
         return render(request, 'societysearch/search.html')
 
-
+@login_required
 def add_society(request):
     form = SocietyForm()
 
@@ -65,7 +66,7 @@ def show_society(request, society_name_slug):
 
     return render(request, 'societysearch/society.html', context=context_dict)
 
-
+@login_required
 def add_review(request, society_name_slug):
     try:
         society = SocietyPage.objects.get(slug=society_name_slug)
@@ -94,7 +95,7 @@ def add_review(request, society_name_slug):
     context_dict = {'form':form,'society':society}
     return render(request,'societysearch/add_review.html',context=context_dict)
 
-
+@login_required
 def LikeView(request,id):
      review = get_object_or_404(Reviews, id=request.POST.get('review_id'))
      review.likes += 1

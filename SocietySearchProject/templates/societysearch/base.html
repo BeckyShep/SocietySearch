@@ -31,7 +31,9 @@
                         <input type="search" placeholder="Search" aria-label="Search" name="searched">
                         <button type="submit">Search</button>
                     </form>
-                    <li><a href="{% url 'add_society' %}">Add Society</a></li>
+                    {% if user.iS_societyAdmin %}
+                        <li><a href="{% url 'add_society' %}">Add Society</a></li>
+                    {% endif %}
                     <li><a href="{% url 'societysearch:about' %}">About</a></li>
                     <li><a href="{% url 'societysearch:account_page' %}">Account</a></li>
                     <li id="signin"><a href="{% url 'auth_login' %}">Sign In</a></li>

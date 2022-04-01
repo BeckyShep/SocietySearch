@@ -21,7 +21,9 @@
         </div>
         <div>
             <h1>Reviews</h1>
+	    {% if user.is_general %)
             <br><a href="add_review">Add Review</a><br/>
+            {% endif %}
             {% for review in reviews %}
                 <li>Review: {{ review.review }}</li>
                 <li>Likes: {{ review.likes }}</li>
