@@ -2,26 +2,25 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Account Page
+	Registration
 {% endblock %}
 
+<!-- link to css file for this page -->
 {% block css_block %}
-    <link rel="stylesheet" href="{% static ' css/account_page.css ' %}">
+    <link rel="stylesheet" href="{% static 'css/account_page.css' %}">
 {% endblock %}
-
 
 {% block body_block %}
-<!-- Page Header -->
-<div class="content">
-    <p class="mainform">Account Details</p>
-    Here you can view your Account details, add new society searchs or remove your existing ones.
+
+<div class="main-div">
+    <strong>Here you can view your Account details, add new society searchs or remove your existing ones.</strong>
 </div>
 
 <!-- Page Body -->
-<div class="main-div">
+<div class="content">
 
     <!-- User Details -->
-    <div class="details-div">
+    <div class="mainform">
         <br />
         <strong>Username</strong> - {{ user }}<br />
         <strong>Email</strong> - {{ user.email }}<br />
