@@ -26,6 +26,7 @@ app_name = 'societysearch'
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
+    path('accountpage/', views.account_page, name='account_page'),
     path('societysearch/', include(('societysearch.urls', 'societysearch'), namespace='societysearch')),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),

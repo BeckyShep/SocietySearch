@@ -18,6 +18,15 @@ def index(request):
 def about(request):
     return render(request, 'societysearch/about.html')
 
+def account_page(request):
+    user_form = GeneralSignUpForm()
+    profile_form = GeneralProfileForm()
+
+    return render(request, 'account/account_page.html',
+                  context={'user_form': user_form,
+                           'profile_form': profile_form,
+                           'registerd': True})
+
 def GeneralSignUpView(request):
     registered = False
 

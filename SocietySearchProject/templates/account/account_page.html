@@ -1,12 +1,21 @@
-{% extends 'societysearch/base.html' %} {% load staticfiles %} {% block style_block %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-<link rel="stylesheet" type="text/css" href="{% static " css/account_page.css " %}"> {% endblock %} {% block title_block %}Account Page{% endblock %} {% block body_block %}
+{% extends 'societysearch/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Account Page
+{% endblock %}
+
+{% block css_block %}
+    <link rel="stylesheet" href="{% static ' css/account_page.css ' %}">
+{% endblock %}
+
+
+{% block body_block %}
 <!-- Page Header -->
-<div class="page-title-div">
-    <p class="page-title">Account Details</p>
+<div class="content">
+    <p class="mainform">Account Details</p>
     Here you can view your Account details, add new society searchs or remove your existing ones.
 </div>
-<hr class="pb-1 page-title-break" />
 
 <!-- Page Body -->
 <div class="main-div">
@@ -21,14 +30,12 @@
     </div>
 
     <br />
-    <div class="row" id="favourite games">
+    <div class="row" id="society">
 
-        <!-- REMOVE Favourite Games -->
-        <div class="col-6 remove-games">
+        <div class="col-6 remove-society">
             <p class="game-header">Your current society searchs</p>
-            <hr class="pb-1 remove" align="right" /> {% for tag in user.favourite_games.all %}
-            <form id="remove tag" method="post" action="{% url 'account' %}" enctype="multipart/form-data">
-                {% csrf_token %}
+            <form id="remove tag" method="post" action="{% url 'account_page' %}" enctype="multipart/form-data">
+            <hr class="pb-1 remove" align="right" /> {% for tag in user.society.all %}
                 <span class="tag-name">{{ tag }}</span>
                 <input type="hidden" name="type" value="delete" />
                 <input type="hidden" name="tag" value="{{ tag.id }}" />
@@ -38,20 +45,9 @@
             <br /> {% endfor %}
         </div>
 
-        <!-- ADD Favourite Games -->
-        <div class="col-6 add-games">
-            <p class="game-header">Add more society searchs!</p>
+        <div class="col-6 add-society">
+            <p class="society-header">Add more society searchs!</p>
             <hr class="pb-1 add" align="left" />
-            <form id="game_tag_form" method="post" action="{% url 'account' %}" enctype="multipart/form-data">
-                {% csrf_token %}
-
-                <div class="form-group">
-                    <select class="selectpicker" multiple data-live-search="true" name="fav_games">
-                        {% for tag in game_tags %}
-                        <option>{{ tag }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
 
                 <input type="hidden" name="type" value="append" />
                 <input type="hidden" name="user" value="{{ user }}" />
@@ -61,10 +57,4 @@
     </div>
 </div>
 
-{% endblock %} {% block script_block %}
-<!-- Import custom JS here! -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-<script>
-    $('selectpicker').selectpicker();
-</script>
 {% endblock %}

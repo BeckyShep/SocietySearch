@@ -1,8 +1,0 @@
-{% extends 'societysearch/index.html' %} {% load staticfiles %} {% block message_block %}
-
-<!-- Page Header -->
-<div class="page-title-div">
-    <p class="page-title">Your feed is a personalised page where you can see posts from your society searchs chosen in <a href="{% url 'account' %}">Account</a>.</p>
-    {% if not posts %} Feed empty? Choose some of your society searchs on your account page! {% endif %}
-</div>
-<hr class="page-title-break" /> {% endblock %}
