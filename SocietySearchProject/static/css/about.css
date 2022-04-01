@@ -6,6 +6,7 @@
 }
 body {
   font-family: sans-serif;
+  height: 100vh;
 }
 a {
   text-decoration: none;
@@ -32,8 +33,13 @@ li {
   font-size: 32px;
   color: #FFF;
 }
+
 .title a:hover a:active a:visited{
   color: #fff;
+}
+
+#titlelink {
+  color: #FFF;
 }
 
 .links {
@@ -206,23 +212,6 @@ li {
   padding: 0.7em;
 }
 
-/* footer styling*/
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: palegoldenrod;
-
-  height: 60px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: auto;
-  width: 50%;
-  font-style: italic;
-}
 
 /* footer styling*/
 footer {
@@ -231,7 +220,7 @@ footer {
   background-color: palegoldenrod;
 
   height: 60px;
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
 }
@@ -249,7 +238,10 @@ footer p{
 
 .content h1 {
   font-size: 48px;
-  padding: 10px 0px;
+  padding: 10px;
+  color: #fff;
+  text-shadow: 5px 5px 5px rgb(116, 116, 116);
+  text-decoration: underline;
 }
 
 .about-desc {
@@ -269,4 +261,11 @@ footer p{
 
 .about-desc a {
   text-decoration: underline;
+}
+.maincontainer {
+  height: 100%;
+  width: 100%;
+  background-image: url('/static/images/community.jpg');
+  background-size: 100vw;
+  
 }

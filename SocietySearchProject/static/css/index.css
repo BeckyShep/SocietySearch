@@ -6,6 +6,7 @@
 }
 body {
   font-family: sans-serif;
+  height: 100vh;
 }
 a {
   text-decoration: none;
@@ -32,6 +33,11 @@ li {
   font-size: 32px;
   color: #FFF;
 }
+
+#titlelink {
+  color: #FFF;
+}
+
 .title a:hover a:active a:visited{
   color: #fff;
 }
@@ -130,7 +136,7 @@ footer {
   background-color: palegoldenrod;
 
   height: 60px;
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
 }
@@ -142,18 +148,33 @@ footer p{
 }
 
 /* main .content styling */
-.content {
-  padding: 2em;
+
+.maincontainer {
+  height: 100%;
+  width: 100%;
+  background-image: url('/static/images/community.jpg');
+  background-size: 100vw;
+  
 }
 
-.content h1 {
-  font-size: 48px;
-  padding: 10px 0px;
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+}
+
+.content p {
+  font-size: 24pt;
+  color: #fff;
+  font-style: italic;
+  text-shadow: 5px 5px 5px rgb(114, 114, 114);
 }
 
 .about-desc {
-  background-color: lightgray;
-  /*size: auto 100px;*/
+  background-color: transparent;
+  border: #fff 1px solid;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(114, 114, 114);
 }
 
 .about-desc p{
@@ -161,7 +182,7 @@ footer p{
 }
 
 .searchbar {
-  padding: 50px 10px 0px 0px;
+  padding: 10px;
   width: 60%;
   margin: auto;
 }

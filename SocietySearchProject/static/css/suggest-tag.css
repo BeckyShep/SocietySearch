@@ -32,8 +32,13 @@
     font-size: 32px;
     color: #fff;
   }
+
   .title a:hover a:active a:visited {
     color: #fff;
+  }
+
+  #titlelink {
+    color: #FFF;
   }
   
   .links {
