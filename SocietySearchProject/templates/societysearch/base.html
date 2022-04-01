@@ -12,6 +12,7 @@
         {% block css_block %}
             gaada
         {% endblock %}
+        <script src="https://kit.fontawesome.com/20c0e82598.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -26,10 +27,11 @@
             <!--Other links-->
             <ul class="nav-links">
                 <div class="links">
-                    <form class="d-flex" method=POST action="{%url 'search' %}">
+                    <form class="navsearch" method=POST action="{%url 'search' %}">
                         {% csrf_token %}
-                        <input type="search" placeholder="Search" aria-label="Search" name="searched">
-                        <button type="submit">Search</button>
+                        <button class="topsearchbutton" type="submit"><i class="fa fa-search"></i></button>
+                        <input type="search" class="topsearchbar" placeholder="Search" aria-label="Search" name="searched">
+                        
                     </form>
                     {% if user.iS_societyAdmin %}
                         <li><a href="{% url 'add_society' %}">Add Society</a></li>
@@ -41,7 +43,7 @@
             </ul>
         </header>
 
-        <div>
+        <div class="maincontainer">
             <!--Page specific content below-->
             {% block body_block %}
             {% endblock %}

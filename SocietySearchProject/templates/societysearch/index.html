@@ -13,10 +13,10 @@
     <!-- main content after header, before footer -->
     {% block body_block %}
     <div class="searchbar">
-        <form class="d-flex" method=POST action="{%url 'search' %}">
+        <form class="searchform" method=POST action="{%url 'search' %}">
                         {% csrf_token %}
                         <input type="search" placeholder="Search" aria-label="Search" name="searched">
-                        <button type="submit">Search</button>
+                        <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
 

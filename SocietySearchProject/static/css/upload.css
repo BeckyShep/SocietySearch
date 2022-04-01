@@ -1,3 +1,165 @@
+/* UTILITIES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #003865;
+    color: #fff;
+  }
+  
+  .nav-links a {
+    color: #fff;
+  }
+  
+  /* header styling */
+  .title h1 {
+    font-size: 32px;
+    color: #fff;
+  }
+  .title a:hover a:active a:visited {
+    color: #fff;
+  }
+  
+  .links {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+  }
+  
+  .links li:hover {
+    background-color: #4c9e9e;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  
+  .links li {
+    padding: 5px 14px;
+    border: #fff;
+    border-radius: 5px;
+    border-style: none;
+  }
+  
+  #signin {
+    border: #fff;
+    border-radius: 5px;
+    border-style: solid;
+  }
+  
+  /* main navbar styling */
+  /** Searchbar stuffs**/
+  .navsearch{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  
+  .topsearchbar {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #22a6b3;
+    padding-right: 40px;
+    color:#fff;
+  }
+  
+  .topsearchbar::placeholder{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  
+  .topsearchbutton {
+  
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #fff ;
+    background-color:transparent;
+    pointer-events: painted; 
+  }
+  
+  .topsearchbutton:hover ~ .topsearchbar{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .topsearchbar:hover{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+  /* main .content styling */
+  .content {
+    padding: 2em;
+  }
+  
+  .content h1 {
+    font-size: 48px;
+    padding: 10px 0px;
+  }
+  
+  .about-desc {
+    background-color: lightgray;
+    /*size: auto 100px;*/
+  }
+  
+  .about-desc p {
+    padding: 0.7em;
+  }
+  
+  /* footer styling*/
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: palegoldenrod;
+  
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: auto;
+    width: 50%;
+    font-style: italic;
+  }
+
 .main-div {
     margin:auto;
     width:70%;
