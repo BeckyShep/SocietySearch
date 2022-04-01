@@ -36,7 +36,7 @@ class SocietyPage(models.Model):
     facebook = models.URLField(blank=True)
     discord = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
-    societyAdmin = models.ForeignKey(SocietyAdminUserProfile,on_delete=models.CASCADE, default=None)
+    societyAdmin = models.ForeignKey(SocietyAdminUserProfile,on_delete=models.CASCADE)
     availability = models.CharField(max_length=100)
     nextEvent = models.CharField(max_length=200)
     description = models.CharField(max_length=500)

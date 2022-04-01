@@ -18,8 +18,9 @@
     <a href="{% url 'societysearch:index' %}">Return to homepage.</a><br />
     {% else %}
     
-    <form id="SocietyAdminSignUpForm" method="{% url 'SocietyAdminSignUp' %}" enctype="multipart/form-data">
+    <form id="SocietyAdminSignUpForm" method="post" action="{% url 'SocietyAdminSignUp' %}" enctype="multipart/form-data">
         {% csrf_token %}
+
         {{ user_form.as_p}}
         {{ profile_form.as_p}}
     
