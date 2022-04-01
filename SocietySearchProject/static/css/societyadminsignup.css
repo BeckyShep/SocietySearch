@@ -66,6 +66,16 @@ li {
   border-style: solid;
 }
 
+#signout {
+  border: #fff;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+#signout:hover {
+  background-color: rgb(190, 39, 39);
+}
+
 /* main navbar styling */
 /** Searchbar stuffs**/
 .navsearch{
