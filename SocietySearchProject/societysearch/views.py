@@ -4,13 +4,13 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 import datetime
 
-
 from societysearch.forms import SocietyForm, ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from datetime import datetime
+
 from societysearch.forms import GeneralSignUpForm, SocietyAdminSignUpForm, GeneralProfileForm, SocietyAdminProfileForm
-from societysearch.models import User, GeneralUserProfile, SocietyAdminUserProfile
+from societysearch.models import User, GeneralUserProfile, SocietyAdminUserProfile, SocietyPage, Reviews
+
 
 # Create your views here.
 
@@ -22,6 +22,7 @@ def index(request):
 # About page
 def about(request):
     return render(request, 'societysearch/about.html')
+
 
 @login_required
 def account_page(request):
@@ -36,15 +37,19 @@ def search(request):
     else:
         return render(request, 'societysearch/search.html')
 
+
 @login_required
 def add_society(request):
+    admin = request.user
     form = SocietyForm()
 
     if request.method == 'POST':
         form = SocietyForm(request.POST)
 
         if form.is_valid():
-            form.save(commit=True)
+            Society = form.save(commit=False)
+            Society.societyAdmin = admin
+            Society.save()
             return redirect('index')
         else:
             print(form.errors)
@@ -65,6 +70,7 @@ def show_society(request, society_name_slug):
         ontext_dict['reviews'] = None
 
     return render(request, 'societysearch/society.html', context=context_dict)
+
 
 @login_required
 def add_review(request, society_name_slug):
@@ -92,26 +98,27 @@ def add_review(request, society_name_slug):
         else:
             print(form.errors)
 
-    context_dict = {'form':form,'society':society}
-    return render(request,'societysearch/add_review.html',context=context_dict)
+    context_dict = {'form': form, 'society': society}
+    return render(request, 'societysearch/add_review.html', context=context_dict)
+
 
 @login_required
-def LikeView(request,id):
-     review = get_object_or_404(Reviews, id=request.POST.get('review_id'))
-     review.likes += 1
-     return redirect(reverse('show_society', kwargs={'society_name_slug': review.society.slug}))
+def LikeView(request, id):
+    review = get_object_or_404(Reviews, id=request.POST.get('review_id'))
+    review.likes += 1
+    return redirect(reverse('show_society', kwargs={'society_name_slug': review.society.slug}))
 
-            
+
 def GeneralSignUpView(request):
     registered = False
 
     if request.method == "POST":
         user_form = GeneralSignUpForm(request.POST)
         profile_form = GeneralProfileForm(request.POST)
-         
+
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
-            
+
             user.set_password(user.password)
             user.save()
 
@@ -129,45 +136,44 @@ def GeneralSignUpView(request):
             print(user_form.errors, profile_form.errors)
 
     else:
-         user_form = GeneralSignUpForm()
-         profile_form = GeneralProfileForm()
+        user_form = GeneralSignUpForm()
+        profile_form = GeneralProfileForm()
 
     return render(request, 'registration/generalsignup.html',
-                  context = {'user_form':user_form,
-                             'profile_form':profile_form,
-                             'registerd':registered})
+                  context={'user_form': user_form,
+                           'profile_form': profile_form,
+                           'registerd': registered})
 
 
 def SocietyAdminSignUpView(request):
-     registered = False
+    registered = False
 
-     if request.method == "POST":
-         user_form = SocietyAdminSignUpForm(request.POST)
-         profile_form = SocietyAdminProfileForm(request.POST)
+    if request.method == "POST":
+        user_form = SocietyAdminSignUpForm(request.POST)
+        profile_form = SocietyAdminProfileForm(request.POST)
 
-         if user_form.is_valid() and profile_form.is_valid():
-             user = user_form.save
-             
-             user.set_password(user.password)
-             user.save()
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save
+            user.set_password(user.password)
+            user.save()
 
-             profile = profile_form.save(commit=False)
-             profile.user = user
+            profile = profile_form.save(commit=False)
+            profile.user = user
 
-             if 'picture' in request.FILES:
-                 profile.picture = request.FILES['picture']
+            if 'picture' in request.FILES:
+                profile.picture = request.FILES['picture']
 
-             profile.save()
+            profile.save()
 
-             registered = True
+            registered = True
 
-         else:
-             print(user_form.errors, profile_form.errors)
+        else:
+            print(user_form.errors, profile_form.errors)
 
-     else:
-         user_form = SocietyAdminSignUpForm()
-         profile_form = SocietyAdminProfileForm()
+    else:
+        user_form = SocietyAdminSignUpForm()
+        profile_form = SocietyAdminProfileForm()
 
-     return render(request, 'registration/societyadminsignup.html',
-                   context = {'user_form':user_form, 'profile_form': profile_form, 'registerd': registered})
+    return render(request, 'registration/societyadminsignup.html',
+                  context={'user_form': user_form, 'profile_form': profile_form, 'registerd': registered})
 
